@@ -1,4 +1,6 @@
+import 'babel-polyfill';
 import 'pepjs';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
