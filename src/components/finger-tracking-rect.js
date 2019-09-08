@@ -17,6 +17,15 @@ function svgPointFromEvent(svg, event) {
 
 function randomHue() {
 	return Math.floor(Math.random() * 360);
+	// const randomColor = ['#9955BB', '#FF5795', '#FF8822', '#FFCC00', '#31CE97', '#1EB7F0', '#0E67A0' ];
+	// return randomColor[Math.floor(Math.random() * randomColor.length)];
+	//#9955BB
+	//#FF5795
+	//#FF8822
+//	#FFCC00
+//	#31CE97
+//	#1EB7F0
+//	#0E67A0
 }
 
 export default function FingerTrackingSvg({ onChange }) {

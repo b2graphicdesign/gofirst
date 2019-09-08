@@ -24,6 +24,7 @@ export default function Finger({
 			<FingerGroup key={0} transform={`translate(${x}, ${y})`} xstyle={GROUP_STYLE}>
 				<FingerCircle
 					{...{winner, loser}}
+					className={`${winner ? 'winner' : 'loser'}`}
 					fill={`hsla(${hue}, 50%, 50%, ${winner ? 1 : 0.8})`}
 					stroke="none"
 				/>

@@ -1,0 +1,21 @@
+.winner{
+	animation-name: border;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-delay: 0s;
+	animation-play-state: running;
+	stroke: white;
+	stroke-width: 0;
+}
+@keyframes border {
+	0% {
+		stroke-width:1000px;
+	}
+	100% {
+		stroke-width: 0;
+	}
+}
+
+.winner::before{
+	border:1px solid #f00;
+}
