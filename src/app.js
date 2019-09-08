@@ -56,17 +56,28 @@ export default function App() {
 
 	return (
 		<React.Fragment>
-			<h1>
-				{completionState ? (
-					`Winner: ${completionState.winner}`
-				) : fingerIds.length === 0 ? (
-					'Touch to start'
-				) : elapsed < TICKS_TO_WAIT ? (
-					'Waiting for players...'
-				) : elapsed < TICKS_TO_WAIT + TICKS_TO_DECIDE ? (
-					'Deciding...'
-				) : '?'}
-			</h1>
+			<div class="header">
+				<div class="logo"></div>
+				<div class="btn-wrapper">
+					<div class="btn-container selected">
+						<div class="btn-type solo"></div>
+					</div>
+					<div className="btn-container">
+						<div className="btn-type teams"></div>
+					</div>
+				</div>
+			</div>
+			{/*<h1>*/}
+				{/*{completionState ? (*/}
+					{/*`Winner: ${completionState.winner}`*/}
+				{/*) : fingerIds.length === 0 ? (*/}
+					{/*'Touch to start'*/}
+				{/*) : elapsed < TICKS_TO_WAIT ? (*/}
+					{/*'Waiting for players...'*/}
+				{/*) : elapsed < TICKS_TO_WAIT + TICKS_TO_DECIDE ? (*/}
+					{/*'Deciding...'*/}
+				{/*) : '?'}*/}
+			{/*</h1>*/}
 
 			<svg
 				style={{
@@ -81,7 +92,7 @@ export default function App() {
 				{completionState && <rect
 					width="100%"
 					height="100%"
-					fill={`hsla(${completionState.fingers[completionState.winner].hue}, 50%, 50%, 0.5)`}
+					fill={`hsla(${completionState.fingers[completionState.winner].hue}, 50%, 50%, 0.8)`}
 				/>}
 
 				{Object.entries(fingersToRender).map(([fingerId, { x, y, hue }]) => (
@@ -96,7 +107,7 @@ export default function App() {
 				<FingerTrackingRect onChange={handleFingersChange} />
 			</svg>
 
-			<pre>{JSON.stringify({ elapsed, fingers, completionState }, null, 2)}</pre>
+			{/*<pre>{JSON.stringify({ elapsed, fingers, completionState }, null, 2)}</pre>*/}
 		</React.Fragment>
 	);
 }

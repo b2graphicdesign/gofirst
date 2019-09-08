@@ -1,21 +1,111 @@
+body{
+	background-color: #000;
+}
+.header{
+	width:100%;
+	height:74px;
+	display: flex;
+	justify-content:space-between;
+	position: relative;
+	z-index: 99;
+}
+.logo{
+	background-image: url("images/gofirst2.png");
+	background-size: 160px 74px;
+	width:160px;
+	height:74px;
+}
+.btn-wrapper{
+	width:148px;
+	height:74px;
+	display: flex;
+	justify-content:space-around;
+	align-items: center;
+}
+.btn-container{
+	width:40px;
+	height:40px;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	border-radius:22px;
+	border:2px solid transparent;
+}
+.btn-type{
+	background-size: 28px 54px;
+	background-position: top;
+	width:28px;
+	height:26px;
+}
+.btn-container.selected{
+	opacity: .3;
+	border-color: #fff;
+}
+.btn-container:hover, .btn-container:active{
+	border-color: #fff;
+	background-color: rgba(255,255,255,.03);
+	cursor: pointer;
+}
+.btn-container.selected:hover, btn-container.selected:active{
+	background-color: transparent;
+	cursor: default;
+}
+.solo{
+	background-image: url("images/solo.png");
+	margin-bottom: 3px;
+}
+.teams{
+	background-image: url("images/teams.png");
+}
+svg{
+	z-index: 1;
+	position: relative;
+}
+circle{
+	animation-name: pulse;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+	stroke-width: 0;
+	/*stroke-opacity:.5;*/
+	r:60px;
+}
+
+@keyframes pulse {
+	0% {
+		stroke-width: 0;
+	}
+	100% {
+		stroke-width:50px;
+		/*r:60px;*/
+	}
+}
 .winner{
 	animation-name: border;
-	animation-duration: 1s;
+	animation-duration: 500ms;
 	animation-timing-function: ease-out;
 	animation-delay: 0s;
+	animation-direction: normal;
+	animation-iteration-count: unset;
 	animation-play-state: running;
-	stroke: white;
+	stroke: #000;
 	stroke-width: 0;
+	stroke-opacity:1;
+	r:90;
+}
+.loser{
+	display:none;
 }
 @keyframes border {
 	0% {
-		stroke-width:1000px;
+		stroke-width:2000px;
+		r:1060px;
 	}
 	100% {
 		stroke-width: 0;
+		r:90px;
 	}
-}
-
-.winner::before{
-	border:1px solid #f00;
 }
